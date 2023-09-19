@@ -1,0 +1,8 @@
+alias tf.plan="terraform plan"
+alias tf.graph="terraform graph"
+alias tf.apply="terraform apply"
+alias tf.autoApply="terraform apply -auto-approve"
+alias tf.output="terraform output"
+alias tf.destroy="terraform destroy"
+alias tf.autoDestroy="terraform destroy -auto-approve"
+alias tf.removeState="rm terraform.tfstate*"
