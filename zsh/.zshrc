@@ -37,15 +37,12 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 if [[ -d ~/.oh-my-zsh-nab/custom ]]; then
-  pushd ~/.oh-my-zsh-nab/custom
-    for f in $PWD/*.zsh
-    do
-        [ -e "$f" ] || continue
-        echo "sourcing $f"
-        source "$f"
-    done
-    unset f
-  popd
+  for f in ~/.oh-my-zsh-nab/custom/*.zsh
+  do
+      [ -e "$f" ] || continue
+      source "$f"
+  done
+  unset f
 fi
 
 # func to run any time PWD changes (see https://zsh.sourceforge.io/Doc/Release/Functions.html)
