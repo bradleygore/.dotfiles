@@ -7,7 +7,7 @@ export NVM_DIR=$(brew --prefix nvm)
 NVM_HOMEBREW=$(brew --prefix nvm)
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/bgore/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # We'll use the nvm plugin, but want it to lazy-load
 zstyle ':omz:plugins:nvm' lazy yes
