@@ -9,3 +9,9 @@ do
     stow $folder
 done
 popd
+
+if [[ -d ./nab ]]; then
+    pushd ./nab
+    ./stow.zsh
+    popd
+fi

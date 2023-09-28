@@ -1,0 +1,3 @@
+[submodule "nab"]
+	path = nab
+	url = git@github.com:bradleygore/.dotfiles-nab.gitgit submodule update --init 
