@@ -36,9 +36,15 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-if [[ -d ~/.oh-my-zsh-nab ]]; then
-  pushd ~/.oh-my-zsh-nab
-  ./nab.zsh
+if [[ -d ~/.oh-my-zsh-nab/custom ]]; then
+  pushd ~/.oh-my-zsh-nab/custom
+    for f in $PWD/*.zsh
+    do
+        [ -e "$f" ] || continue
+        echo "sourcing $f"
+        source "$f"
+    done
+    unset f
   popd
 fi
 
