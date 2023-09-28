@@ -37,7 +37,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 if [[ -d ~/.oh-my-zsh-nab ]]; then
-  source ~/.oh-my-zsh-nab/nab.zsh
+  pushd ~/.oh-my-zsh-nab
+  ./nab.zsh
+  popd
 fi
 
 # func to run any time PWD changes (see https://zsh.sourceforge.io/Doc/Release/Functions.html)
