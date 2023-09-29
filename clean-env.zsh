@@ -7,3 +7,10 @@ do
     stow -D $folder
 done
 popd
+
+if [[ -d ./nab ]]; then
+    echo "cleaning nab"
+    pushd ./nab
+        ./clean.zsh
+    popd
+fi
