@@ -1,3 +1,4 @@
 [submodule "nab"]
-	path = nab
-	url = git@github.com:bradleygore/.dotfiles-nab.git
+    path = nab
+    url = git@github.com:bradleygore/.dotfiles-nab.git
+    ignore = dirty

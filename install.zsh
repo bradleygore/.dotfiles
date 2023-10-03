@@ -1,4 +1,7 @@
 
+# to install submodules:
+# git submodule update --init --recursive
+
 source $PWD/zsh/.oh-my-zsh/custom/dotfiles.zsh
 
 pushd $DOTFILES
