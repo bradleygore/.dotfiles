@@ -60,10 +60,10 @@ function git.cmFix() {
   git.cmoji fix hammer_and_wrench $1
 }
 
-function git.build() {
+function git.cmBbuild() {
 	git.cmoji build arrow_up $1
 }
 
-function git.chore() {
+function git.cmChore() {
 	git.cmoji chore spiral_notepad $1
 }
