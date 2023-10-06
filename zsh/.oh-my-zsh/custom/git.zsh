@@ -59,3 +59,11 @@ function git.cmFeature() {
 function git.cmFix() {
   git.cmoji fix hammer_and_wrench $1
 }
+
+function git.build() {
+	git.cmoji build arrow_up $1
+}
+
+function git.chore() {
+	git.cmoji chore spiral_notepad $1
+}
