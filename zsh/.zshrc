@@ -1,4 +1,5 @@
-# other custom stuff can be found (and is auto-loaded) ~/.oh-my-zsh/custom
+# other custom stuff can be found (and is auto-loaded) ~/.omzsh/custom
+ZSH_CUSTOM=${HOME}/.omzsh/custom
 
 # Add brew to path
 eval "$(/opt/homebrew/bin/brew shellenv)"

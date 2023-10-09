@@ -2,7 +2,7 @@
 # to install submodules:
 # git submodule update --init --recursive
 
-source $PWD/zsh/.oh-my-zsh/custom/dotfiles.zsh
+source $PWD/zsh/.omzsh/custom/dotfiles.zsh
 
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
