@@ -26,6 +26,16 @@ function git.mergeMain() {
 	fi
 }
 
+function git.findBranch() {
+	local bname=$(git branch | fzf)
+
+	if [[ -z $bname ]]; then
+		exit 0
+	fi
+
+	git checkout $bname
+}
+
 function git.newBranch() {
 	git checkout -b $1
 }
