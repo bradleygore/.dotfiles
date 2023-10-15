@@ -9,7 +9,7 @@ func tmx.sessionizer() {
     fi
 
     if [[ -z $selected ]]; then
-        exit 0
+        return 0
     fi
 
     local selected_name=$(basename "$selected" | tr . _)
@@ -18,7 +18,7 @@ func tmx.sessionizer() {
     if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
         echo "creating new session without detaching"
         tmux new-session -s $selected_name -c $selected
-        exit 0
+        return 0
     fi
 
     if ! tmux has-session -t=$selected_name 2> /dev/null; then
@@ -37,13 +37,13 @@ func tmx.findSession() {
     local tmux_running=$(pgrep tmux)
     if [[ -z $tmux_running ]]; then
         echo "tmux not running"
-        exit 0
+        return 1
     fi
 
     local sesh=$(tmux list-sessions -F "#{session_name}" | fzf)
     
     if [[ -z $sesh ]]; then
-        exit 0
+        return 0
     fi
 
     echo "attaching to tmux:$sesh"
@@ -67,7 +67,7 @@ func tmx.findOrSessionize() {
 func tmx.cht() {
   local selected=`cat ~/.tmux-cht-languages ~/.tmux-cht-command | fzf`
   if [[ -z $selected ]]; then
-      exit 0
+      return 0
   fi
 
   read -p "Enter Query: " query

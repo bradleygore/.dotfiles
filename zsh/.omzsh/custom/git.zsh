@@ -27,10 +27,10 @@ function git.mergeMain() {
 }
 
 function git.findBranch() {
-	local bname=$(git branch | fzf)
+	local bname=$(git branch --format "%(refname:short)" | fzf)
 
 	if [[ -z $bname ]]; then
-		exit 0
+		return 0
 	fi
 
 	git checkout $bname
