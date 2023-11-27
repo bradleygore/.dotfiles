@@ -1,1 +1,1 @@
-alias codeProfiles.ed="code /Users/bgore/Library/Application\ Support/Code/User/profiles"
+alias codeProfiles.edit="code /Users/bgore/Library/Application\ Support/Code/User/profiles"
