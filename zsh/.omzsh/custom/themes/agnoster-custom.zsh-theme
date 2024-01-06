@@ -196,9 +196,20 @@ prompt_hg() {
   fi
 }
 
+# BDG Custom dir_name func
+function dir_name {
+	local dn=$(PWD | sed "s,$HOME,~,')
+	dn=${dn/Documents\//docs\/}
+  dn=${dn/projects\//proj\/}
+  dn=${dn/personal/P}
+	dn=${dn/client/C}
+	echo "$dn"
+}
+# END BDG Custom dir_name func
+
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG '%~'
+  prompt_segment blue $CURRENT_FG '$(dir_name)'
 }
 
 # Virtualenv: current working virtualenv

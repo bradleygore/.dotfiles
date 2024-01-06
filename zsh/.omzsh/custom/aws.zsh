@@ -3,4 +3,4 @@
 alias aws.whoami="aws sts get-caller-identity"
 ## change profile like `aws.profile.set some_profile_name`
 alias aws.profile.set="export AWS_DEFAULT_PROFILE=$1; export AWS_PROFILE=$1"
-
+alias aws.adabraBradley="export AWS_DEFAULT_PROFILE=adabra_bradley"
