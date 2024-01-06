@@ -26,6 +26,10 @@ function git.mergeMain() {
 	fi
 }
 
+function git.purgeLocalRemoved() {
+	git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -d
+}
+
 function git.findBranch() {
 	local bname=$(git branch --format "%(refname:short)" | fzf)
 
