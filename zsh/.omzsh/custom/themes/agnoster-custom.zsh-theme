@@ -207,7 +207,7 @@ function dir_name {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG '$(dir_name)'
+  prompt_segment blue $CURRENT_FG "$(dir_name)"
 }
 
 # Virtualenv: current working virtualenv
