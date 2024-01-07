@@ -46,6 +46,17 @@ if [[ -d ~/.oh-my-zsh-nab/custom ]]; then
   unset f
 fi
 
+# if there are local ~/.oh-my-zsh/custom/*.zsh files let's source those
+# so that this set can be overlaid by users' local ones
+if [[ -d ~/.oh-my-zsh/custom ]]; then
+  for f in ~/.oh-my-zsh/custom/*.zsh
+  do
+    [ -e "$f" ] || continue
+    source "$f"
+  done
+  unset f
+fi
+
 # func to run any time PWD changes (see https://zsh.sourceforge.io/Doc/Release/Functions.html)
 chpwd() {
   if [ -f .nvmrc ]
