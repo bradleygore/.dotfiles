@@ -2,7 +2,7 @@
 ZSH_CUSTOM=${HOME}/.omzsh/custom
 
 # Add brew to path
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$($(which brew) shellenv)"
 # tell nvm plugin where nvm is installed (via homebrew)
 export NVM_DIR=$(brew --prefix nvm)
 NVM_HOMEBREW=$(brew --prefix nvm)
@@ -17,7 +17,7 @@ zstyle ':omz:plugins:nvm' lazy yes
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="agnoster-custom"
 
 # since we have customized agnoster, we don't need prompt ending of <aws:username> that aws plugin generates 
 SHOW_AWS_PROMPT=false 
@@ -53,9 +53,6 @@ chpwd() {
     nvm use --silent
   fi
 }
-
-# prompt overrides
-export PROMPT='%{%f%b%k%}$(build_prompt)$(prompt_working_line) ' # pulls in our custom/agnoster.zsh prompt func
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then

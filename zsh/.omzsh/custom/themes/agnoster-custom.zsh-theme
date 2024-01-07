@@ -197,11 +197,11 @@ prompt_hg() {
 }
 
 function dir_name {
-	local dn=$(PWD | sed "s,$HOME,~,")
-	dn=${dn/Documents\//docs\/}
+  local dn=$(PWD | sed "s,$HOME,~,")
+  dn=${dn/Documents\//docs\/}
   dn=${dn/projects\//proj\/}
   dn=${dn/personal/P}
-	dn=${dn/client/C}
+  dn=${dn/client/C}
 	echo "$dn"
 }
 
@@ -245,6 +245,15 @@ prompt_aws() {
   esac
 }
 
+prompt_working_line() {
+	echo -n '\n'
+	# 21D2 = ⇒
+	# 27F4 = ⟴
+	# 
+	prompt_segment 'green' 'black' '\U27F4'
+	prompt_end
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -259,4 +268,4 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+export PROMPT='%{%f%b%k%}$(build_prompt)$(prompt_working_line) '
