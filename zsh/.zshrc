@@ -77,7 +77,7 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH
 alias python=python3
 
 # GO Path
-export GOROOT=$HOME/sdk/go1.20.1
+export GOROOT=$HOME/sdk/go1.22.2
 export GOPATH=$HOME/go/bin
 export GOBIN=$HOME/go/bin # where to install global tooling
 # go modules we want to promote to globally available
