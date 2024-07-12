@@ -1,29 +1,30 @@
 git config --global alias.root 'rev-parse --show-toplevel';
 
-function git.mergeMaster() {
+# @param branchName [default:develop]
+function git.mergeFrom() {
+	local branchName=${1:-"develop"}
 	if git diff-index --quiet HEAD --; then
 		# No Changes
-		git checkout master
+		git checkout $branchName
 		git pull
 		git checkout -
-		git merge master
+		git merge $branchName
 	else
 		# Changes
 		echo "You have local changes. Please commit them first and then merge."
 	fi
 }
 
+function git.mergeMaster() {
+	git.mergeFrom master
+}
+
 function git.mergeMain() {
-	if git diff-index --quiet HEAD --; then
-		#No Changes
-		git checkout main
-		git pull
-		git checkout -
-		git merge main
-	else
-		#Changes
-		echo "You have local changes. Please commit them first and then merge."
-	fi
+	git.mergeFrom main
+}
+
+function git.mergeDevelop() {
+	git.mergeFrom develop
 }
 
 function git.purgeLocalRemoved() {
