@@ -79,10 +79,10 @@ alias python=python3
 # GO Path
 export GOPATH=$HOME/go/bin
 export GOBIN=$HOME/go/bin # where to install global tooling
-# go modules we want to promote to globally available
-export PATH=$GOROOT/bin:$GOPATH:$PATH
 # govm (Go Version Manager)
 export PATH="$HOME/.govm/shim:$PATH"
+# go modules we want to promote to globally available
+export PATH=$GOPATH:$PATH
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
