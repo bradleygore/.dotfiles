@@ -5,7 +5,13 @@ func tmx.sessionizer() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find ~/git ~/.oh-my-zsh -mindepth 1 -maxdepth 1 -type d | fzf)
+        local -a dirs
+        dirs=(
+            ~/git/*(N/)
+            ~/git/*.worktrees/*(N/)
+            ~/.oh-my-zsh/*(N/)
+        )
+        selected=$(printf '%s\n' "${dirs[@]}" | fzf)
     fi
 
     if [[ -z $selected ]]; then
